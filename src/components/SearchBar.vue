@@ -4,7 +4,7 @@
     <input
       class="search-input"
       v-model="userInput"
-      @keypress.enter="onInput"
+      @keypress.enter="getVideos(userInput)"
       type="text"
       placeholder="🔍"
       onfocus="this.placeholder = ''"
@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+// action method들을 일일히 this.$store.dispatch()로 부르지 않고 바로 사용할 수 있도록 하는 함수
 export default {
   name: "SearchBar",
   data() {
@@ -22,10 +24,8 @@ export default {
     };
   },
   methods: {
-    onInput() {
-      this.$emit("handleInput", this.userInput);
-      this.$store.state.userInput;
-    },
+    ...mapActions(["getVideos"]),
+    // mapActions()는 object를 반환하기 때문에 spread operator로 methods 안에 action methods를 선언해줘야함
   },
 };
 </script>

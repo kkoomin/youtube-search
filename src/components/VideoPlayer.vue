@@ -15,9 +15,12 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   name: "VideoPlayer",
-  props: ["mainVideo"],
+  computed: { ...mapState(["mainVideo"]) },
+
   methods: {
     decodeHtmlEntity(str) {
       return str.replace(/&#(\d+);/g, function(match, dec) {

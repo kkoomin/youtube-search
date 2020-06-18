@@ -5,7 +5,7 @@
       v-bind:key="video.id.videoId"
     >
       <VideoItem
-        @click.native="$emit('handleSetVideoPlayer', video.id.videoId)"
+        @click.native="setVideoPlayer(video.id.videoId)"
         :url="video.snippet.thumbnails.high.url"
         :title="video.snippet.title"
       />
@@ -15,13 +15,15 @@
 
 <script>
 import VideoItem from "./VideoItem.vue";
+import { mapGetters, mapMutations } from "vuex";
 
 export default {
   name: "VideoList",
   components: {
     VideoItem,
   },
-  props: ["videos", "mainVideo"],
+  computed: { ...mapGetters(["videos", "mainVideo"]) },
+  methods: { ...mapMutations(["setVideoPlayer"]) },
 };
 </script>
 
