@@ -3,8 +3,8 @@
     <h1>Youtube Search</h1>
     <input
       class="search-input"
-      v-model="inputValue"
-      @keypress.enter="$emit('handleInput', inputValue)"
+      v-model="userInput"
+      @keypress.enter="onInput"
       type="text"
       placeholder="🔍"
       onfocus="this.placeholder = ''"
@@ -17,8 +17,15 @@ export default {
   name: "SearchBar",
   data() {
     return {
-      inputValue: null,
+      userInput: null,
+      // vuex store에 data를 변경
     };
+  },
+  methods: {
+    onInput() {
+      this.$emit("handleInput", this.userInput);
+      this.$store.state.userInput;
+    },
   },
 };
 </script>

@@ -28,12 +28,12 @@ export default {
     VideoPlayer,
     VideoList,
   },
-  data() {
-    return {
-      videos: [],
-      mainVideo: null,
-    };
-  },
+  // data() {
+  //   return {
+  //     videos: [],
+  //     mainVideo: null,
+  //   };
+  // },
   methods: {
     async input(value) {
       // 1. 입력된 검색어를 가지고,
