@@ -1,24 +1,5 @@
 # youtube-search
 
-## Project setup
-```
-npm install
-```
+> YouTube API를 이용하여 Vue.js로 컴포넌트 구성 등 연습 
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+> https://youtube-search-kkoomin.netlify.app/
